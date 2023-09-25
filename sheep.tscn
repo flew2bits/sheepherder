@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://c65rbgv0ude08"]
+
+[ext_resource type="Script" path="res://sheep.gd" id="1_dxpid"]
+[ext_resource type="Texture2D" uid="uid://cu0gysnkxgrwh" path="res://arrow_head.png" id="2_bq0v6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n5503"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0it1"]
+radius = 37.0
+
+[node name="Sheep" type="CharacterBody2D" groups=["sheep"]]
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_dxpid")
+sight_distance = 90.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+rotation = 1.5708
+scale = Vector2(0.192094, 0.192094)
+texture = ExtResource("2_bq0v6")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n5503")
+
+[node name="Vision" type="Area2D" parent="."]
+monitorable = false
+
+[node name="VisionRegion" type="CollisionShape2D" parent="Vision"]
+shape = SubResource("CircleShape2D_e0it1")
+debug_color = Color(0.890196, 0.862745, 0.0313726, 0.0941176)
+
+[node name="LabelContainer" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="LabelContainer"]
+offset_left = -20.0
+offset_top = -54.0
+offset_right = 20.0
+offset_bottom = -28.0
+text = "5"
+horizontal_alignment = 1
+
+[node name="Separation" type="Line2D" parent="LabelContainer"]
+points = PackedVector2Array(0, 0, 51, 0)
+width = 3.0
+default_color = Color(0.00392157, 0, 1, 0.498039)
+
+[node name="Alignment" type="Line2D" parent="LabelContainer"]
+points = PackedVector2Array(0, 0, 51, 0)
+width = 3.0
+default_color = Color(0.615686, 0.0784314, 0.223529, 0.498039)
+
+[node name="Cohesion" type="Line2D" parent="LabelContainer"]
+points = PackedVector2Array(0, 0, 51, 0)
+width = 3.0
+default_color = Color(0.133333, 0.396078, 0.188235, 0.498039)
+
+[node name="Flocking" type="Line2D" parent="LabelContainer"]
+points = PackedVector2Array(0, 0, 51, 0)
+width = 3.0
+default_color = Color(0.67451, 0.654902, 0.168627, 1)
+
+[node name="RightRayCast" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+rotation = -1.309
+target_position = Vector2(0, 100)
+collision_mask = 2
+
+[node name="LeftRayCast" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+rotation = -1.8326
+target_position = Vector2(0, 100)
+collision_mask = 2

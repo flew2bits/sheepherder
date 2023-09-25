@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd2rar4rq7xpw"]
+
+[ext_resource type="Script" path="res://dog.gd" id="1_g630i"]
+[ext_resource type="Texture2D" uid="uid://ds4qx4g7eu0ws" path="res://dog.png" id="1_hbs2b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15rp5"]
+
+[node name="Dog" type="CharacterBody2D" groups=["dog"]]
+script = ExtResource("1_g630i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.159248, 0.159248)
+texture = ExtResource("1_hbs2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_15rp5")

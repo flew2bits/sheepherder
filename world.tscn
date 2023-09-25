@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://o8pgsbo7wfi0"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_4c212"]
+[ext_resource type="PackedScene" uid="uid://cd2rar4rq7xpw" path="res://dog.tscn" id="2_2gvld"]
+[ext_resource type="PackedScene" uid="uid://bay6cslq2cxxl" path="res://wall.tscn" id="3_uxf0f"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_4c212")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="Dog" parent="." instance=ExtResource("2_2gvld")]
+position = Vector2(-92, -98)
+
+[node name="Wall" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(1.52588e-05, 313)
+scale = Vector2(700, 10)
+
+[node name="Wall2" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(-1.81899e-12, -306)
+scale = Vector2(700, 10)
+
+[node name="Wall3" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(-568, 0)
+rotation = 1.5708
+scale = Vector2(400, 10)
+
+[node name="Wall4" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(564, -0.999999)
+rotation = 1.5708
+scale = Vector2(400, 10)
+
+[node name="Wall5" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(-521, -245)
+rotation = 2.35619
+scale = Vector2(400, 10)
+
+[node name="Wall6" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(505, 246)
+rotation = 2.35619
+scale = Vector2(400, 10)
+
+[node name="Wall7" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(-514, 256)
+rotation = 0.785397
+scale = Vector2(400, 10)
+
+[node name="Wall8" parent="." instance=ExtResource("3_uxf0f")]
+position = Vector2(514, -250)
+rotation = 0.785397
+scale = Vector2(400, 10)
